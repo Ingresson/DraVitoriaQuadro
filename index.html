@@ -4,71 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dra. Vitória Quadro - Cirurgiã-Dentista</title>
-  <meta name="description" content="Agende sua consulta com a Dra. Vitória Quadro, especialista em implantodontia e prótese dentária em Pelotas, RS. Atendimento personalizado e humanizado." />
+  <meta name="description" content="Clínica odontológica da Dra. Vitória Quadro em Pelotas-RS. Especialista em implantes e prótese dentária. Atendimento personalizado e moderno." />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* (Estilos simplificados para o exemplo, você pode usar seu CSS original) */
-    body { font-family: Arial, sans-serif; margin:0; background:#f8f8f8; color:#333; }
-    header { background:#6a1b9a; color:#fff; padding:20px; text-align:center; }
-    header img { width:120px; border-radius:50%; margin-bottom:15px; }
-    .container { max-width:800px; margin:20px auto; background:#fff; padding:20px; box-shadow:0 0 10px rgba(0,0,0,0.1);}
-    ul { list-style:none; padding-left:0; }
-    ul li { margin-bottom:10px; font-size:18px; }
-    ul li a { text-decoration:none; color:#6a1b9a; }
-    ul li a:hover, ul li a:focus { text-decoration:underline; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #fff0f5; color: #333; }
+    header { background: #d36fa4; color: white; text-align: center; padding: 60px 20px; }
+    header img { width: 120px; border-radius: 50%; margin-bottom: 15px; box-shadow: 0 0 8px rgba(0,0,0,0.2); }
+    header h1 { font-size: 32px; margin-bottom: 10px; }
+    header p { font-size: 18px; }
+
+    nav { background: #f8c9dc; padding: 10px 0; text-align: center; }
+    nav a { color: #6a1b9a; text-decoration: none; margin: 0 15px; font-weight: 600; }
+    nav a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    h2, h3 { color: #c2185b; margin-bottom: 20px; }
+    p { margin-bottom: 15px; font-size: 16px; }
+
     .cta-button {
-      display:block; width:100%; padding:15px; background:#28a745; color:#fff;
-      text-align:center; border-radius:8px; font-size:18px; margin:20px 0;
-      text-decoration:none;
+      display: inline-block; background: #c2185b; color: white; padding: 15px 25px;
+      border-radius: 30px; text-decoration: none; font-weight: 600;
+      margin-top: 20px; transition: background 0.3s ease;
     }
-    .cta-button:hover, .cta-button:focus { background:#218838; }
-    footer { text-align:center; padding:15px; font-size:14px; color:#777; }
+    .cta-button:hover { background: #ad1457; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+    iframe { width: 100%; height: 300px; border: none; border-radius: 8px; }
+
+    .testimonial {
+      background: #fce4ec; border-left: 5px solid #c2185b;
+      padding: 15px 20px; border-radius: 6px; font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center; padding: 20px; font-size: 14px;
+      background: #f8c9dc; color: #6a1b9a; margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="Sem título.jpg" alt="Foto da Dra. Vitória Quadro" loading="lazy" />
-    <h1>Agenda Aberta em Pelotas!</h1>
-    <p>Dra. Vitória Quadro - Cirurgiã-Dentista</p>
-    <p>Implantodontista e Protesista</p>
+    <img src="dra-vitoria-quadro.jpg" alt="Foto da Dra. Vitória Quadro">
+    <h1>Transforme seu sorriso com a Dra. Vitória Quadro</h1>
+    <p>Cirurgiã-Dentista | Implantodontista | Protesista</p>
   </header>
 
+  <nav>
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#servicos">Tratamentos</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
   <main class="container">
-    <section aria-labelledby="services-title">
-      <h2 id="services-title">Cuide do seu sorriso com quem entende!</h2>
+    <section id="quem-somos">
+      <h2>Quem Somos</h2>
+      <p>A Dra. Vitória Quadro é uma cirurgiã-dentista apaixonada por transformar sorrisos com técnica e cuidado. Especialista em Implantodontia e Prótese Dentária, atende seus pacientes com empatia, precisão e excelência.</p>
+      <p>Seu consultório está localizado no coração de Pelotas, oferecendo estrutura moderna, ambiente acolhedor e tratamentos personalizados.</p>
+      <p><strong>Endereço:</strong> Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
+      <p><strong>Telefone:</strong> <a href="tel:+5553991023827">(53) 99102-3827</a></p>
+      <p><strong>Email:</strong> <a href="mailto:contato@vitoriaquadro.com.br">contato@vitoriaquadro.com.br</a></p>
+    </section>
+
+    <section id="servicos">
+      <h2>Tratamentos</h2>
       <ul>
-        <li><a href="implantes.html">🦷 Implantes</a></li>
-        <li><a href="protese.html">🦷 Prótese</a></li>
-        <li><a href="restauracoes.html">🦷 Restaurações</a></li>
-        <li><a href="extracoes.html">🦷 Extrações</a></li>
-        <li><a href="limpeza.html">🦷 Limpeza</a></li>
-        <li><a href="clareamento.html">🦷 Clareamento</a></li>
-        <li><a href="facetas.html">🦷 Facetas</a></li>
+        <li>🦷 Implantes Dentários</li>
+        <li>🦷 Prótese Dentária</li>
+        <li>🦷 Restaurações</li>
+        <li>🦷 Extrações</li>
+        <li>🦷 Limpeza e Profilaxia</li>
+        <li>🦷 Clareamento Dental</li>
+        <li>🦷 Facetas de Porcelana</li>
       </ul>
-      <a class="cta-button" href="https://wa.me/5553991023827" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp">Agende agora pelo WhatsApp</a>
+      <a class="cta-button" href="https://wa.me/5553991023827" target="_blank">Agende sua consulta pelo WhatsApp</a>
     </section>
 
-    <section aria-labelledby="about-title">
-      <h3 id="about-title">Sobre a Dra. Vitória Quadro</h3>
-      <p>Profissional especializada em implantodontia e prótese dentária. Atendimento humanizado e personalizado para cada paciente.</p>
+    <section class="grid" id="depoimentos">
+      <div>
+        <h3>Depoimentos</h3>
+        <div class="testimonial">“Profissional incrível! Atendimento impecável e resultado acima da expectativa.” – Juliana M.</div>
+        <div class="testimonial">“Me senti muito segura com a Dra. Vitória. Cuidadosa e muito competente.” – Roberto S.</div>
+      </div>
+      <div>
+        <h3>Localização</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.636063137465!2d-52.344092224520186!3d-31.76407047405713" allowfullscreen loading="lazy" title="Mapa da clínica"></iframe>
+      </div>
     </section>
 
-    <section aria-labelledby="location-title">
-      <h3 id="location-title">Localização</h3>
-      <p>Endereço: Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.636063137465!2d-52.344092224520186!3d-31.76407047405713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9511af1a394a6ff1%3A0x4768f57934868333!2sR.%20Bar%C3%A3o%20de%20Santa%20Tecla%2C%20656%20-%20Centro%2C%20Pelotas%20-%20RS%2C%2096015-630!5e0!3m2!1spt-BR!2sbr!4v1716143683586!5m2!1spt-BR!2sbr" 
-        allowfullscreen 
-        loading="lazy" 
-        title="Mapa da localização da clínica Dra. Vitória Quadro"
-        style="width:100%; height:300px; border:none; border-radius:8px;">
-      </iframe>
-    </section>
-
-    <section aria-labelledby="contact-title">
-      <h3 id="contact-title">Contato</h3>
-      <p>📞 <a href="tel:+5553991023827">(53) 99102-3827</a></p>
-      <p>📍 Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
-      <p>🕒 Horários flexíveis – entre em contato para agendar</p>
+    <section id="contato">
+      <h2>Contato</h2>
+      <p><strong>Telefone:</strong> <a href="tel:+5553991023827">(53) 99102-3827</a></p>
+      <p><strong>Email:</strong> <a href="mailto:contato@vitoriaquadro.com.br">contato@vitoriaquadro.com.br</a></p>
+      <p><strong>Endereço:</strong> Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
     </section>
   </main>
 
@@ -77,4 +112,3 @@
   </footer>
 </body>
 </html>
-
