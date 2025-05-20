@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    /* Reset básico e box-sizing */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -19,6 +20,7 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
+
     /* Laterais decorativas */
     .side-image {
       position: fixed;
@@ -42,6 +44,7 @@
       filter: grayscale(60%);
     }
 
+    /* Header */
     header {
       background: #d36fa4;
       color: white;
@@ -71,6 +74,7 @@
       font-weight: 600;
     }
 
+    /* Nav */
     nav {
       background: #f8c9dc;
       padding: 14px 0;
@@ -91,6 +95,7 @@
       color: #4a0b65;
     }
 
+    /* Container principal */
     .container {
       max-width: 900px;
       margin: 40px auto 80px;
@@ -117,6 +122,7 @@
       padding-left: 0;
     }
 
+    /* Botão de ação */
     .cta-button {
       display: inline-block;
       background: #c2185b;
@@ -133,6 +139,7 @@
       background: #ad1457;
     }
 
+    /* Grid duplo */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -146,6 +153,7 @@
       border-radius: 8px;
     }
 
+    /* Depoimentos */
     .testimonial {
       background: #fce4ec;
       border-left: 5px solid #c2185b;
@@ -176,6 +184,15 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      user-select: none;
+    }
+    .faq-item h4 span {
+      font-size: 28px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active h4 span {
+      transform: rotate(45deg);
     }
     .faq-item p {
       margin-top: 10px;
@@ -188,143 +205,264 @@
       display: block;
     }
 
+    /* Promoções */
+    .promotions {
+      background: #f8bbd0;
+      padding: 25px 30px;
+      border-radius: 12px;
+      margin: 50px 0;
+      text-align: center;
+      color: #6a1b9a;
+      font-weight: 700;
+      font-size: 22px;
+      box-shadow: 0 4px 12px rgba(194,0,104,0.2);
+    }
+    .promotions span {
+      color: #c2185b;
+      font-size: 28px;
+    }
+
+    /* Galeria Antes e Depois */
+    .gallery {
+      margin-top: 50px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      background: #fff;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #eee;
+    }
+    .gallery-caption {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #6a1b9a;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Formulário de contato */
+    form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    form input, form textarea {
+      padding: 12px 14px;
+      font-size: 16px;
+      border: 1.5px solid #c2185b;
+      border-radius: 8px;
+      resize: vertical;
+      font-family: inherit;
+    }
+    form button {
+      background: #c2185b;
+      color: white;
+      font-weight: 700;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #ad1457;
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 24px 15px;
+      padding: 20px;
       font-size: 14px;
       background: #f8c9dc;
       color: #6a1b9a;
-      margin-top: 60px;
+      margin-top: 40px;
       position: relative;
       z-index: 2;
     }
 
-    /* Botão WhatsApp fixo */
+    /* Botão WhatsApp flutuante */
     .whatsapp-button {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 10000;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
       width: 60px;
       height: 60px;
-      background-color: #25d366;
       border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-size: 30px;
+      z-index: 10;
+      transition: background 0.3s ease;
+      text-decoration: none;
     }
     .whatsapp-button:hover {
-      background-color: #1ebe5a;
-    }
-    .whatsapp-button svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
+      background: #128c4a;
     }
 
+    /* Responsividade */
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: 1fr;
       }
+      .side-image {
+        display: none;
+      }
       .container {
-        margin: 30px 15px 80px;
+        margin: 20px 15px 80px;
         padding: 20px;
-        font-size: 16px;
       }
       header h1 {
         font-size: 28px;
       }
-      nav a {
-        margin: 0 12px;
+      header p {
         font-size: 16px;
       }
-      .faq-item h4 {
-        font-size: 18px;
+      nav a {
+        margin: 0 10px;
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="side-image side-left" aria-hidden="true"></div>
-  <div class="side-image side-right" aria-hidden="true"></div>
+
+  <!-- Laterais decorativas -->
+  <div class="side-image side-left"></div>
+  <div class="side-image side-right"></div>
 
   <header>
-    <img src="dra-vitoria-quadro.jpg" alt="Foto da Dra. Vitória Quadro" />
-    <h1>Transforme seu sorriso com a Dra. Vitória Quadro</h1>
-    <p>Cirurgiã-Dentista | Implantodontista | Protesista</p>
+    <img src="https://i.imgur.com/45N7yDY.jpg" alt="Dra. Vitória Quadro - Cirurgiã-Dentista" />
+    <h1>Dra. Vitória Quadro</h1>
+    <p>Cirurgiã-Dentista - Implantes e Prótese</p>
   </header>
 
   <nav>
-    <a href="#quem-somos">Quem Somos</a>
-    <a href="#servicos">Tratamentos</a>
-    <a href="#depoimentos">Depoimentos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Antes e Depois</a>
     <a href="#faq">FAQ</a>
     <a href="#contato">Contato</a>
   </nav>
 
   <main class="container">
-    <section id="quem-somos">
-      <h2>Quem Somos</h2>
-      <p>A Dra. Vitória Quadro é uma cirurgiã-dentista apaixonada por transformar sorrisos com técnica e cuidado. Especialista em Implantodontia e Prótese Dentária, atende seus pacientes com empatia, precisão e excelência.</p>
-      <p>Seu consultório está localizado no coração de Pelotas, oferecendo estrutura moderna, ambiente acolhedor e tratamentos personalizados.</p>
-      <p><strong>Endereço:</strong> Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
-      <p><strong>Telefone:</strong> <a href="tel:+5553991023827">(53) 99102-3827</a></p>
-      <p><strong>Email:</strong> <a href="mailto:contato@vitoriaquadro.com.br">contato@vitoriaquadro.com.br</a></p>
+
+    <section id="sobre">
+      <h2>Sobre a Dra. Vitória</h2>
+      <p>
+        A Dra. Vitória Quadro atua na área de implantodontia e prótese dentária em Pelotas, RS. Com atendimento personalizado e técnicas modernas, oferece tratamentos que transformam sorrisos e aumentam a autoestima.
+      </p>
     </section>
 
-    <section id="servicos">
-      <h2>Tratamentos</h2>
-      <ul>
-        <li>🦷 Implantes Dentários</li>
-        <li>🦷 Prótese Dentária</li>
-        <li>🦷 Restaurações</li>
-        <li>🦷 Extrações</li>
-        <li>🦷 Limpeza e Profilaxia</li>
-        <li>🦷 Clareamento Dental</li>
-        <li>🦷 Facetas de Porcelana</li>
-      </ul>
-      <a class="cta-button" href="https://wa.me/5553991023827" target="_blank" rel="noopener noreferrer">Agende sua consulta pelo WhatsApp</a>
+    <section id="galeria" class="gallery">
+      <h2>Galeria Antes e Depois</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://i.imgur.com/8JQ1E9F.jpg" alt="Paciente 1 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 1: Reabilitação com implantes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.imgur.com/yMd8cM0.jpg" alt="Paciente 2 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 2: Prótese fixa sobre implantes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.imgur.com/OSuEK7z.jpg" alt="Paciente 3 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 3: Sorriso restaurado com lentes de contato dentais</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.imgur.com/35Mrmre.jpg" alt="Paciente 4 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 4: Reabilitação completa</div>
+        </div>
+      </div>
     </section>
 
-    <section class="grid" id="depoimentos">
-      <div>
-        <h3>Depoimentos</h3>
-        <div class="testimonial">“Profissional incrível! Atendimento impecável e resultado acima da expectativa.” – Juliana M.</div>
-        <div class="testimonial">“Me senti muito segura com a Dra. Vitória. Cuidadosa e muito competente.” – Roberto S.</div>
-      </div>
-      <div>
-        <h3>Localização</h3>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.636063137465!2d-52.344092224520186!3d-31.76407047405713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9511af1a394a6ff1%3A0x4768f57934868333!2sR.%20Bar%C3%A3o%20de%20Santa%20Tecla%2C%20656%20-%20Centro%2C%20Pelotas%20-%20RS%2C%2096015-630!5e0!3m2!1spt-BR!2sbr!4v1716143683586!5m2!1spt-BR!2sbr"
-          allowfullscreen
-          loading="lazy"
-          title="Mapa da localização da clínica Dra. Vitória Quadro"
-          style="width:100%; height:300px; border:none; border-radius:8px;"
-        ></iframe>
-      </div>
+    <section id="promocoes" class="promotions">
+      <p>
+        Aproveite nossos <span>pacotes promocionais</span> exclusivos para implantes e próteses. Consulte condições especiais e parcelamento no cartão!
+      </p>
     </section>
 
     <section id="faq" class="faq">
-      <h2>FAQ - Perguntas Frequentes</h2>
+      <h2>Perguntas Frequentes (FAQ)</h2>
+
       <div class="faq-item">
-        <h4>Quais são as formas de pagamento aceitas? <span>+</span></h4>
-        <p>Aceitamos cartão de crédito (com opção de parcelamento), Pix e dinheiro. Você pode escolher a forma que for mais conveniente para você!</p>
+        <h4>Quais formas de pagamento vocês aceitam? <span>+</span></h4>
+        <p>Aceitamos cartão de crédito com parcelamento, Pix e dinheiro para sua maior comodidade.</p>
       </div>
+
       <div class="faq-item">
-        <h4>Quanto tempo dura o procedimento? <span>+</span></h4>
-        <p>O tempo varia conforme o tipo de serviço, mas normalmente nossos procedimentos duram entre 30 minutos e 2 horas. Tudo feito com calma para garantir o melhor resultado.</p>
+        <h4>Qual o tempo médio para um implante dentário? <span>+</span></h4>
+        <p>O tempo médio varia entre 3 a 6 meses, dependendo do caso clínico e do processo de osseointegração.</p>
       </div>
+
       <div class="faq-item">
-        <h4>Preciso marcar uma avaliação antes do procedimento? <span>+</span></h4>
-        <p>Sim! A avaliação inicial é muito importante para entendermos suas necessidades e garantirmos um resultado personalizado e seguro.</p>
+        <h4>O procedimento é doloroso? <span>+</span></h4>
+        <p>O implante é realizado com anestesia local, o que garante conforto durante o procedimento. Eventuais dores pós-operatórias são controladas com medicação prescrita.</p>
       </div>
+
       <div class="faq-item">
-        <h4>O procedimento dói? <span>+</span></h4>
-        <p>Sentir um desconforto leve é normal, mas usamos técnicas para minimizar a dor. Caso você sinta algo intenso, avise imediatamente.</p>
+        <h4>Posso usar prótese imediata? <span>+</span></h4>
+        <p>Em alguns casos, é possível instalar prótese imediata após o implante, mas depende da avaliação do seu caso específico.</p>
       </div>
+
+      <div class="faq-item">
+        <h4>Quanto tempo dura um implante dentário? <span>+</span></h4>
+        <p>Com os cuidados adequados, um implante pode durar por muitos anos, até mesmo a vida toda.</p>
+      </div>
+
     </section>
 
     <section id="contato">
+      <h2>Contato</h2>
+      <form action="https://formsubmit.co/seu-email@exemplo.com" method="POST" target="_blank">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Dra. Vitória Quadro - Todos os direitos reservados.
+  </footer>
+
+  <a
+    href="https://wa.me/5553999999999"
+    target="_blank"
+    class="whatsapp-button"
+    aria-label="Contato via WhatsApp"
+  >
+    &#x2706;
+  </a>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
