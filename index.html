@@ -175,9 +175,10 @@
     }
 
     .gallery img {
-      width: 100%;
-      height: auto;
+      width: 2cm;
+      height: 3cm;
       display: block;
+      object-fit: cover;
     }
 
     .gallery figcaption {
@@ -384,120 +385,75 @@
       form {
         max-width: 100%;
       }
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+      .gallery img {
+        width: 1.5cm;
+        height: 2.2cm;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div id="imagem-principal">
-      <img src="dra-vitoria-quadro.jpg" alt="Foto da Dra. Vitória Quadro" />
+      <img src="foto-dra-vitoria-quadro.jpg" alt="Foto da Dra. Vitória Quadro sorrindo" />
     </div>
-    <h1>Transforme seu sorriso com a Dra. Vitória Quadro</h1>
-    <p>Cirurgiã-Dentista | Implantodontista | Protesista</p>
+    <h1>Dra. Vitória Quadro</h1>
+    <p>Cirurgiã-Dentista - Implantes e Prótese Dentária</p>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+      <a href="#faq">FAQ</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#quem-somos">Quem Somos</a>
-    <a href="#servicos">Tratamentos</a>
-    <a href="#depoimentos">Depoimentos</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
   <main class="container">
-    <section id="quem-somos">
-      <h2>Quem Somos</h2>
-      <p>A Dra. Vitória Quadro é uma cirurgiã-dentista apaixonada por transformar sorrisos com técnica e cuidado. Especialista em Implantodontia e Prótese Dentária, atende seus pacientes com empatia, precisão e excelência.</p>
-      <p>Seu consultório está localizado no coração de Pelotas, oferecendo estrutura moderna, ambiente acolhedor e tratamentos personalizados.</p>
-      <p><strong>Endereço:</strong> Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
-      <p><strong>Telefone:</strong> <a href="tel:+5553991023827">(53) 99102-3827</a></p>
-      <p><strong>Email:</strong> <a href="mailto:contato@vitoriaquadro.com.br">contato@vitoriaquadro.com.br</a></p>
+    <section id="sobre">
+      <h2>Sobre a Dra. Vitória</h2>
+      <p>Com anos de experiência em odontologia estética e funcional, a Dra. Vitória Quadro oferece um atendimento humanizado e tecnologias avançadas para garantir o melhor sorriso para você.</p>
     </section>
 
-    <section id="servicos">
-      <h2>Tratamentos</h2>
-      <ul>
-        <li>🦷 Implantes Dentários</li>
-        <li>🦷 Prótese Dentária</li>
-        <li>🦷 Restaurações</li>
-        <li>🦷 Extrações</li>
-        <li>🦷 Limpeza e Profilaxia</li>
-        <li>🦷 Clareamento Dental</li>
-        <li>🦷 Facetas de Porcelana</li>
-      </ul>
-      <a class="cta-button" href="https://wa.me/5553991023827" target="_blank" rel="noopener noreferrer">Agende sua consulta pelo WhatsApp</a>
-    </section>
-
-    <section class="grid" id="depoimentos">
-      <div>
-        <h3>Depoimentos</h3>
-        <div class="testimonial">“Profissional incrível! Atendimento impecável e resultado acima da expectativa.” – Juliana M.</div>
-        <div class="testimonial">“Me senti muito segura com a Dra. Vitória. Cuidadosa e muito competente.” – Roberto S.</div>
-      </div>
-
-      <div>
-        <h3>Galeria Antes e Depois</h3>
-        <div class="gallery">
-          <figure>
-            <img src="antes-depois1.jpg" alt="Antes e Depois 1" />
-            <figcaption>Implante Dentário - Caso 1</figcaption>
-          </figure>
-          <figure>
-            <img src="antes-depois2.jpg" alt="Antes e Depois 2" />
-            <figcaption>Prótese Dentária - Caso 2</figcaption>
-          </figure>
-          <figure>
-            <img src="antes-depois3.jpg" alt="Antes e Depois 3" />
-            <figcaption>Clareamento Dental - Caso 3</figcaption>
-          </figure>
-          <figure>
-            <img src="antes-depois4.jpg" alt="Antes e Depois 4" />
-            <figcaption>Facetas de Porcelana - Caso 4</figcaption>
-          </figure>
+    <section id="depoimentos">
+      <h2>Depoimentos</h2>
+      <div class="grid">
+        <div class="testimonial">
+          "A Dra. Vitória mudou minha vida! Atendimento excelente e resultados incríveis." – Ana M.
+        </div>
+        <div class="testimonial">
+          "Profissional dedicada e super competente. Recomendo a todos!" – Carlos R.
         </div>
       </div>
     </section>
 
-    <section class="promo">
-      Promoção especial: Pacote implante + clareamento com 10% de desconto para agendamentos em Junho!
-    </section>
-
-    <section id="faq" class="faq">
-      <h2>FAQ - Perguntas Frequentes</h2>
-
-      <div class="faq-item">
-        <div class="faq-question">Quais formas de pagamento são aceitas?</div>
-        <div class="faq-answer">
-          Aceitamos cartão de crédito com parcelamento, Pix e dinheiro. Escolha a forma que for mais conveniente para você!
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Quanto tempo dura o tratamento de implante dentário?</div>
-        <div class="faq-answer">
-          O tratamento pode durar entre 3 a 6 meses, dependendo do caso e da necessidade de procedimentos complementares.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">O tratamento é doloroso?</div>
-        <div class="faq-answer">
-          Utilizamos técnicas modernas de anestesia para garantir o máximo conforto durante os procedimentos. A maioria dos pacientes relata apenas um leve desconforto pós-tratamento.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-question">Posso agendar uma avaliação sem compromisso?</div>
-        <div class="faq-answer">
-          Sim! A avaliação inicial é importante para entendermos suas necessidades e apresentar o melhor plano de tratamento.
-        </div>
+    <section id="galeria">
+      <h2>Galeria Antes e Depois</h2>
+      <div class="gallery">
+        <figure>
+          <img src="antes1.jpg" alt="Antes do tratamento 1" />
+          <figcaption>Antes</figcaption>
+        </figure>
+        <figure>
+          <img src="depois1.jpg" alt="Depois do tratamento 1" />
+          <figcaption>Depois</figcaption>
+        </figure>
+        <figure>
+          <img src="antes2.jpg" alt="Antes do tratamento 2" />
+          <figcaption>Antes</figcaption>
+        </figure>
+        <figure>
+          <img src="depois2.jpg" alt="Depois do tratamento 2" />
+          <figcaption>Depois</figcaption>
+        </figure>
       </div>
     </section>
 
     <section id="contato">
       <h2>Contato</h2>
-      <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
+      <form>
         <label for="nome">Nome</label>
         <input type="text" id="nome" name="nome" required />
 
@@ -505,22 +461,37 @@
         <input type="email" id="email" name="email" required />
 
         <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
         <button type="submit">Enviar</button>
       </form>
     </section>
+
+    <section id="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-question">Quanto tempo dura o tratamento com implantes?</div>
+          <div class="faq-answer">O tratamento pode durar de 3 a 6 meses, dependendo do caso.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Existe algum cuidado especial após a prótese?</div>
+          <div class="faq-answer">Sim, é importante manter a higiene bucal rigorosa e visitas regulares ao dentista.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="promo">
+      Aproveite nossa promoção especial de implantes dentários com desconto até o final do mês!
+    </div>
   </main>
 
-  <a id="whatsapp-button" href="https://wa.me/5553991023827" target="_blank" aria-label="WhatsApp">
-    <svg style="width:32px;height:32px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
-      <path d="M16 11c.03.23.05.46.05.7a5 5 0 01-5 5 5 5 0 01-5-5c0-2.76 2.24-5 5-5a5 5 0 015 5z"/>
-      <path d="M17.41 14.59a1 1 0 010 1.41l-2.83 2.83a1 1 0 01-1.41 0L7 13.66a2 2 0 011.42-3.42l2.42 2.42a1 1 0 001.41 0l2.16-2.16z"/>
-    </svg>
+  <a href="https://wa.me/5551999999999" id="whatsapp-button" aria-label="Contato via WhatsApp" target="_blank" rel="noopener">
+    &#x2709;
   </a>
 
   <script>
-    // FAQ toggle
+    // Script para expandir/contrair FAQ
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         item.classList.toggle('active');
@@ -529,3 +500,4 @@
   </script>
 </body>
 </html>
+
