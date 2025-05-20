@@ -9,9 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background: #fff0f5; color: #333; }
-    
-    header { background: #d36fa4; color: white; text-align: center; padding: 0 20px 60px; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #d36fa4;
+      color: white;
+      text-align: center;
+      padding-bottom: 40px;
+    }
 
     .imagem-container {
       width: 100%;
@@ -20,7 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .imagem-container img {
@@ -31,40 +42,113 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.2);
     }
 
-    header h1 { font-size: 32px; margin-bottom: 10px; }
-    header p { font-size: 18px; }
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
 
-    nav { background: #f8c9dc; padding: 10px 0; text-align: center; }
-    nav a { color: #6a1b9a; text-decoration: none; margin: 0 15px; font-weight: 600; }
-    nav a:hover { text-decoration: underline; }
+    header p {
+      font-size: 20px;
+    }
 
-    .container { max-width: 1000px; margin: 40px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-    h2, h3 { color: #c2185b; margin-bottom: 20px; }
-    p { margin-bottom: 15px; font-size: 16px; }
+    nav {
+      background: #f8c9dc;
+      padding: 12px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #6a1b9a;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    h2, h3 {
+      color: #c2185b;
+      margin-bottom: 25px;
+      font-size: 26px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
 
     .cta-button {
-      display: inline-block; background: #c2185b; color: white; padding: 15px 25px;
-      border-radius: 30px; text-decoration: none; font-weight: 600;
-      margin-top: 20px; transition: background 0.3s ease;
+      display: inline-block;
+      background: #c2185b;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 25px;
+      transition: background 0.3s ease;
+      font-size: 18px;
     }
-    .cta-button:hover { background: #ad1457; }
 
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
-    iframe { width: 100%; height: 300px; border: none; border-radius: 8px; }
+    .cta-button:hover {
+      background: #ad1457;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: none;
+      border-radius: 10px;
+    }
 
     .testimonial {
-      background: #fce4ec; border-left: 5px solid #c2185b;
-      padding: 15px 20px; border-radius: 6px; font-style: italic;
-      margin-bottom: 15px;
+      background: #fce4ec;
+      border-left: 5px solid #c2185b;
+      padding: 20px;
+      border-radius: 8px;
+      font-style: italic;
+      margin-bottom: 20px;
     }
 
     footer {
-      text-align: center; padding: 20px; font-size: 14px;
-      background: #f8c9dc; color: #6a1b9a; margin-top: 40px;
+      text-align: center;
+      padding: 25px;
+      font-size: 16px;
+      background: #f8c9dc;
+      color: #6a1b9a;
+      margin-top: 50px;
     }
 
     @media (max-width: 768px) {
-      .grid { grid-template-columns: 1fr; }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -117,7 +201,23 @@
       <div>
         <h3>Localização</h3>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.636063137465!2d-52.344092224520186!3d-31.76407047405713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9511af1a394a6ff1%3A0x4768f57934868333!2sR.%20Bar%C3%A3o%20de%20Santa%20Tecla%2C%20656%20-%20Centro%2C%20Pelotas%20-%20RS%2C%2096015-630!5e0!3m2!1spt-BR!2sbr!4v1716143683586!5m2!1spt-BR!2sbr" 
-        allowfullscreen 
-        loading="lazy" 
-        title="Mapa da localização da clínica Dra. Vitória Quadro"
-        style="width:100%; height:300px; border:none; border-radius:8px;">
+          allowfullscreen 
+          loading="lazy" 
+          title="Mapa da localização da clínica Dra. Vitória Quadro">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p><strong>Telefone:</strong> <a href="tel:+5553991023827">(53) 99102-3827</a></p>
+      <p><strong>Email:</strong> <a href="mailto:contato@vitoriaquadro.com.br">contato@vitoriaquadro.com.br</a></p>
+      <p><strong>Endereço:</strong> Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Dra. Vitória Quadro. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
