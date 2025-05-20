@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dra. Vitória Quadro - Cirurgiã-Dentista</title>
   <meta name="description" content="Clínica odontológica da Dra. Vitória Quadro em Pelotas-RS. Especialista em implantes e prótese dentária. Atendimento personalizado e moderno." />
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -20,81 +19,93 @@
       color: #333;
       font-size: 18px;
       line-height: 1.7;
-      overflow-x: hidden; /* previne scroll horizontal */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Header e Navegação */
     header {
       background: #d36fa4;
       color: white;
       text-align: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-bottom: 40px;
     }
 
-    nav {
-      background: #f8c9dc;
-      padding: 15px 30px;
-    }
-
-    nav ul {
-      list-style: none;
+    #imagem-principal {
+      width: 100%;
+      max-height: 450px;
+      background-color: #d36fa4;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+      overflow: hidden;
     }
 
-    nav ul li a {
-      color: #6a1b9a;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 18px;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #c2185b;
-      text-decoration: underline;
-    }
-
-    /* Imagem principal */
     #imagem-principal img {
-      width: 100%;
-      height: auto;
-      display: block;
+      width: auto;
+      max-width: 100%;
       max-height: 450px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
+      display: block;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
 
     header h1 {
       font-size: 36px;
-      margin: 20px 0 5px;
+      margin-bottom: 10px;
     }
 
     header p {
-      font-size: 22px;
-      font-weight: 500;
-      margin-bottom: 20px;
+      font-size: 20px;
+      margin-bottom: 30px;
     }
 
-    /* Container principal */
+    nav {
+      background: #f8c9dc;
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #6a1b9a;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      font-size: 18px;
+      display: inline-block;
+      padding: 8px 12px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      border-radius: 6px;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #d36fa4;
+      color: white;
+      outline: none;
+    }
+
     .container {
       max-width: 1200px;
-      margin: 50px auto;
-      padding: 0 20px 50px 20px;
+      margin: 50px auto 80px;
+      padding: 30px 20px;
       background: white;
       border-radius: 10px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      position: relative;
-      z-index: 1;
+      flex-grow: 1;
     }
 
-    h2, h3 {
+    h2,
+    h3 {
       color: #c2185b;
       margin-bottom: 25px;
-      font-size: 28px;
+      font-size: 26px;
     }
 
     p {
@@ -102,12 +113,11 @@
     }
 
     ul {
-      list-style-type: disc;
-      margin-left: 20px;
       margin-bottom: 20px;
+      padding-left: 20px;
+      list-style: inside disc;
     }
 
-    /* Botão CTA */
     .cta-button {
       display: inline-block;
       background: #c2185b;
@@ -121,19 +131,21 @@
       font-size: 18px;
     }
 
-    .cta-button:hover {
+    .cta-button:hover,
+    .cta-button:focus {
       background: #ad1457;
+      outline: none;
     }
 
-    /* Grid 2 colunas para depoimentos e mapa */
-    .grid-2 {
+    /* Grid para depoimentos e galeria */
+    .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 40px;
       margin-top: 40px;
     }
 
-    /* Depoimentos */
+    /* Testemunhos */
     .testimonial {
       background: #fce4ec;
       border-left: 5px solid #c2185b;
@@ -143,144 +155,145 @@
       margin-bottom: 20px;
     }
 
-    /* Mapa */
-    iframe {
-      width: 100%;
-      height: 320px;
-      border: none;
-      border-radius: 10px;
+    /* Galeria antes e depois */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 40px;
     }
 
-    /* Galeria Antes e Depois */
-    #galeria {
-      margin-top: 50px;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-      gap: 20px;
-    }
-    .gallery-item {
-      border-radius: 10px;
+    .gallery figure {
+      margin: 0;
+      background: #f8c9dc;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      background: #fff;
-      text-align: center;
-      padding-bottom: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .gallery-item img {
+
+    .gallery img {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
-    .gallery-caption {
-      padding: 10px 15px;
+
+    .gallery figcaption {
+      padding: 8px;
+      font-size: 14px;
+      color: #6a1b9a;
+      text-align: center;
+    }
+
+    /* Formulário */
+    form {
+      max-width: 500px;
+      margin-top: 40px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 6px;
       font-weight: 600;
       color: #6a1b9a;
     }
 
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      resize: vertical;
+    }
+
+    form button {
+      background: #c2185b;
+      color: white;
+      padding: 14px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover,
+    form button:focus {
+      background: #ad1457;
+      outline: none;
+    }
+
     /* FAQ */
-    #faq {
-      margin-top: 50px;
+    .faq {
+      margin-top: 40px;
+      max-width: 700px;
     }
 
     .faq-item {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
     }
 
     .faq-question {
-      cursor: pointer;
       font-weight: 600;
-      font-size: 20px;
       color: #c2185b;
-      padding: 12px 0;
       position: relative;
+      padding-right: 25px;
     }
 
     .faq-question::after {
       content: '+';
       position: absolute;
       right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 28px;
+      top: 0;
+      font-size: 24px;
+      line-height: 1;
       transition: transform 0.3s ease;
+      user-select: none;
     }
 
-    .faq-question.active::after {
+    .faq-item.active .faq-question::after {
       content: '-';
+      transform: rotate(180deg);
     }
 
     .faq-answer {
-      display: none;
-      padding: 10px 0 15px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding-left: 10px;
       color: #444;
-      font-size: 17px;
-      line-height: 1.5;
+      margin-top: 8px;
     }
 
-    .faq-answer.show {
-      display: block;
-    }
-
-    /* Formulário de contato */
-    form {
-      max-width: 600px;
-      margin: 40px auto 0;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 12px 15px;
-      font-size: 16px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      resize: vertical;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    textarea {
-      min-height: 120px;
-    }
-
-    button[type="submit"] {
-      background: #c2185b;
-      color: white;
-      border: none;
-      padding: 16px;
-      border-radius: 30px;
-      font-size: 18px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-
-    button[type="submit"]:hover {
-      background: #ad1457;
+    .faq-item.active .faq-answer {
+      max-height: 500px; /* suficientemente alto para conter texto */
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
 
     /* Promoções */
-    #promocoes {
+    .promo {
       background: #f8c9dc;
-      padding: 30px;
       border-radius: 12px;
-      margin: 50px 0;
+      padding: 25px 30px;
+      margin-top: 50px;
       text-align: center;
-    }
-
-    #promocoes h2 {
-      margin-bottom: 20px;
-      font-size: 30px;
-    }
-
-    #promocoes p {
-      font-size: 20px;
-      font-weight: 600;
       color: #6a1b9a;
+      font-size: 22px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     /* Botão WhatsApp fixo */
@@ -288,7 +301,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25d366;
+      background: #25d366;
       color: white;
       border-radius: 50%;
       width: 60px;
@@ -296,83 +309,101 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
+      font-size: 28px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 110;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      text-decoration: none;
     }
 
     #whatsapp-button:hover {
-      background-color: #1ebe57;
+      background: #1ebe57;
     }
 
-    #whatsapp-button svg {
-      width: 30px;
-      height: 30px;
-    }
-
-    /* Imagens laterais decorativas para ocupar espaços vazios */
-    .side-image-left, .side-image-right {
+    /* Espaços laterais preenchidos com imagens */
+    body::before,
+    body::after {
+      content: "";
       position: fixed;
-      top: 100px;
+      top: 0;
       width: 150px;
-      max-width: 150px;
-      height: auto;
-      z-index: 0;
-      opacity: 0.15;
-      user-select: none;
-    }
-    .side-image-left {
-      left: 0;
-    }
-    .side-image-right {
-      right: 0;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      z-index: 5;
     }
 
-    /* Responsividade */
-    @media (max-width: 991px) {
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-      nav ul {
-        gap: 15px;
-      }
-      .side-image-left, .side-image-right {
+    body::before {
+      left: 0;
+      background-image: url('lateral-esquerda.png');
+    }
+
+    body::after {
+      right: 0;
+      background-image: url('lateral-direita.png');
+    }
+
+    /* Responsivo */
+    @media (max-width: 1100px) {
+      body::before,
+      body::after {
         display: none;
       }
+      .container {
+        margin: 30px 15px 80px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 16px;
+      }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       header h1 {
-        font-size: 26px;
+        font-size: 28px;
       }
       header p {
-        font-size: 18px;
-      }
-      nav ul li a {
         font-size: 16px;
+        margin-bottom: 20px;
+      }
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+      nav {
+        padding: 10px 0;
+      }
+      .container {
+        padding: 20px 15px;
+      }
+      form {
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#quem-somos">Quem Somos</a></li>
-        <li><a href="#tratamentos">Tratamentos</a></li>
-        <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
     <div id="imagem-principal">
       <img src="dra-vitoria-quadro.jpg" alt="Foto da Dra. Vitória Quadro" />
     </div>
     <h1>Transforme seu sorriso com a Dra. Vitória Quadro</h1>
     <p>Cirurgiã-Dentista | Implantodontista | Protesista</p>
   </header>
+
+  <nav>
+    <a href="#quem-somos">Quem Somos</a>
+    <a href="#servicos">Tratamentos</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+  </nav>
 
   <main class="container">
     <section id="quem-somos">
@@ -384,7 +415,7 @@
       <p><strong>Email:</strong> <a href="mailto:contato@vitoriaquadro.com.br">contato@vitoriaquadro.com.br</a></p>
     </section>
 
-    <section id="tratamentos">
+    <section id="servicos">
       <h2>Tratamentos</h2>
       <ul>
         <li>🦷 Implantes Dentários</li>
@@ -395,111 +426,104 @@
         <li>🦷 Clareamento Dental</li>
         <li>🦷 Facetas de Porcelana</li>
       </ul>
-      <a class="cta-button" href="https://wa.me/5553991023827" target="_blank">Agende sua consulta pelo WhatsApp</a>
+      <a class="cta-button" href="https://wa.me/5553991023827" target="_blank" rel="noopener noreferrer">Agende sua consulta pelo WhatsApp</a>
     </section>
 
-    <section id="depoimentos" class="grid-2">
+    <section class="grid" id="depoimentos">
       <div>
-        <h2>Depoimentos</h2>
+        <h3>Depoimentos</h3>
         <div class="testimonial">“Profissional incrível! Atendimento impecável e resultado acima da expectativa.” – Juliana M.</div>
         <div class="testimonial">“Me senti muito segura com a Dra. Vitória. Cuidadosa e muito competente.” – Roberto S.</div>
       </div>
+
       <div>
-        <h2>Localização</h2>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.636063137465!2d-52.344092224520186!3d-31.76407047405713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9511af1a394a6ff1%3A0x4768f57934868333!2sR.%20Bar%C3%A3o%20de%20Santa%20Tecla%2C%20656%20-%20Centro%2C%20Pelotas%20-%20RS%2C%2096015-630!5e0!3m2!1spt-BR!2sbr!4v1716143683586!5m2!1spt-BR!2sbr"
-          allowfullscreen
-          loading="lazy"
-          title="Mapa da localização da clínica Dra. Vitória"
-        ></iframe>
-      </div>
-    </section>
-
-    <section id="galeria">
-      <h2>Galeria Antes e Depois</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="antes1.jpg" alt="Caso Antes 1" />
-          <div class="gallery-caption">Antes</div>
-        </div>
-        <div class="gallery-item">
-          <img src="depois1.jpg" alt="Caso Depois 1" />
-          <div class="gallery-caption">Depois</div>
-        </div>
-        <div class="gallery-item">
-          <img src="antes2.jpg" alt="Caso Antes 2" />
-          <div class="gallery-caption">Antes</div>
-        </div>
-        <div class="gallery-item">
-          <img src="depois2.jpg" alt="Caso Depois 2" />
-          <div class="gallery-caption">Depois</div>
+        <h3>Galeria Antes e Depois</h3>
+        <div class="gallery">
+          <figure>
+            <img src="antes-depois1.jpg" alt="Antes e Depois 1" />
+            <figcaption>Implante Dentário - Caso 1</figcaption>
+          </figure>
+          <figure>
+            <img src="antes-depois2.jpg" alt="Antes e Depois 2" />
+            <figcaption>Prótese Dentária - Caso 2</figcaption>
+          </figure>
+          <figure>
+            <img src="antes-depois3.jpg" alt="Antes e Depois 3" />
+            <figcaption>Clareamento Dental - Caso 3</figcaption>
+          </figure>
+          <figure>
+            <img src="antes-depois4.jpg" alt="Antes e Depois 4" />
+            <figcaption>Facetas de Porcelana - Caso 4</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section id="promocoes">
-      <h2>Promoções Especiais</h2>
-      <p>Agende seu implante dentário até o fim do mês e ganhe 20% de desconto! Vagas limitadas.</p>
+    <section class="promo">
+      Promoção especial: Pacote implante + clareamento com 10% de desconto para agendamentos em Junho!
     </section>
 
-    <section id="faq">
+    <section id="faq" class="faq">
       <h2>FAQ - Perguntas Frequentes</h2>
 
       <div class="faq-item">
-        <div class="faq-question">Qual o tempo de recuperação após o implante dentário?</div>
-        <div class="faq-answer">O tempo médio de recuperação varia de 1 a 2 semanas para a cicatrização inicial, mas o processo completo pode levar alguns meses para a integração total do implante.</div>
+        <div class="faq-question">Quais formas de pagamento são aceitas?</div>
+        <div class="faq-answer">
+          Aceitamos cartão de crédito com parcelamento, Pix e dinheiro. Escolha a forma que for mais conveniente para você!
+        </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-question">Quais cuidados devo ter após a prótese dentária?</div>
-        <div class="faq-answer">Manter a higiene oral diária, evitar alimentos muito duros e realizar consultas regulares para manutenção são essenciais para a durabilidade da prótese.</div>
+        <div class="faq-question">Quanto tempo dura o tratamento de implante dentário?</div>
+        <div class="faq-answer">
+          O tratamento pode durar entre 3 a 6 meses, dependendo do caso e da necessidade de procedimentos complementares.
+        </div>
       </div>
 
       <div class="faq-item">
         <div class="faq-question">O tratamento é doloroso?</div>
-        <div class="faq-answer">Todos os procedimentos são realizados com anestesia local para minimizar o desconforto. A maioria dos pacientes relata apenas uma leve sensibilidade após o procedimento.</div>
+        <div class="faq-answer">
+          Utilizamos técnicas modernas de anestesia para garantir o máximo conforto durante os procedimentos. A maioria dos pacientes relata apenas um leve desconforto pós-tratamento.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Posso agendar uma avaliação sem compromisso?</div>
+        <div class="faq-answer">
+          Sim! A avaliação inicial é importante para entendermos suas necessidades e apresentar o melhor plano de tratamento.
+        </div>
       </div>
     </section>
 
     <section id="contato">
       <h2>Contato</h2>
-      <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST" target="_blank">
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu email" required />
-        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-        <button type="submit">Enviar Mensagem</button>
+      <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
       </form>
     </section>
   </main>
 
-  <!-- Imagens laterais decorativas -->
-  <img src="decoracao-left.png" alt="Decoração lateral esquerda" class="side-image-left" />
-  <img src="decoracao-right.png" alt="Decoração lateral direita" class="side-image-right" />
-
-  <!-- Botão WhatsApp fixo -->
-  <a href="https://wa.me/5553991023827" target="_blank" id="whatsapp-button" aria-label="WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" >
-      <path d="M16.5 10.5a3 3 0 01-3 3h-.5a1.5 1.5 0 00-1.5 1.5v.5a3 3 0 01-3 3h-.5a6 6 0 01-6-6v-6a6 6 0 016-6h6a6 6 0 016 6v.5z"></path>
-      <path d="M17.5 17.5l-3-3m0 0l-3-3m3 3l3 3m-3-3l-3-3"></path>
+  <a id="whatsapp-button" href="https://wa.me/5553991023827" target="_blank" aria-label="WhatsApp">
+    <svg style="width:32px;height:32px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" >
+      <path d="M16 11c.03.23.05.46.05.7a5 5 0 01-5 5 5 5 0 01-5-5c0-2.76 2.24-5 5-5a5 5 0 015 5z"/>
+      <path d="M17.41 14.59a1 1 0 010 1.41l-2.83 2.83a1 1 0 01-1.41 0L7 13.66a2 2 0 011.42-3.42l2.42 2.42a1 1 0 001.41 0l2.16-2.16z"/>
     </svg>
   </a>
 
   <script>
     // FAQ toggle
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const isShown = answer.classList.contains('show');
-
-        // Fecha todas as outras respostas abertas
-        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
-        document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-
-        // Se estava fechado, abre
-        if (!isShown) {
-          answer.classList.add('show');
-          question.classList.add('active');
-        }
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
       });
     });
   </script>
