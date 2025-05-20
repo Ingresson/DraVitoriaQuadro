@@ -466,3 +466,508 @@
   </script>
 </body>
 </html>
+O que foi corrigido / adicionado:
+Código JS para expandir/recolher FAQ ao clicar
+
+Layout responsivo e preenchimento melhor da área central com as imagens nas laterais
+
+Galeria antes e depois com legendas curtas
+
+Formulário com action para formsubmit.co (basta trocar o email)
+
+Botão flutuante WhatsApp visível e fixo no canto inferior direito
+
+Promoções com chamada em destaque
+
+FAQ com perguntas selecionadas e respostas didáticas e simples
+
+Quer que eu gere uma versão com imagens locais ou outro ajuste?
+
+
+
+
+
+
+
+Você disse:
+quero que as imagens apareçam no site, corrija o codigo
+
+
+O ChatGPT disse:
+Beleza! O problema é que no código usei imagens do imgur, mas às vezes o link direto não funciona direito para uso em <img> em alguns casos. Vou substituir por links confiáveis do Unsplash para as imagens laterais e da galeria — assim elas vão aparecer certinho.
+
+Segue o código corrigido com URLs diretas para imagens públicas que aparecem no site:
+
+html
+Copiar
+Editar
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dra. Vitória Quadro - Cirurgiã-Dentista</title>
+  <meta name="description" content="Clínica odontológica da Dra. Vitória Quadro em Pelotas-RS. Especialista em implantes e prótese dentária. Atendimento personalizado e moderno." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset básico e box-sizing */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Laterais decorativas */
+    .side-image {
+      position: fixed;
+      top: 0;
+      width: 150px;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .side-left {
+      left: 0;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=150&q=80');
+      filter: grayscale(60%);
+    }
+    .side-right {
+      right: 0;
+      background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=150&q=80');
+      filter: grayscale(60%);
+    }
+
+    /* Header */
+    header {
+      background: #d36fa4;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
+    }
+    header img {
+      width: auto;
+      height: 10cm;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 15px;
+      border-radius: 0;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      background-color: #fff0f5;
+      padding: 8px;
+    }
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    /* Nav */
+    nav {
+      background: #f8c9dc;
+      padding: 14px 0;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    nav a {
+      color: #6a1b9a;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #4a0b65;
+    }
+
+    /* Container principal */
+    .container {
+      max-width: 900px;
+      margin: 40px auto 80px;
+      padding: 30px 30px 50px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 2;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    h2, h3 {
+      color: #c2185b;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+    p, li {
+      margin-bottom: 16px;
+    }
+    ul {
+      list-style: inside disc;
+      margin-bottom: 20px;
+      padding-left: 0;
+    }
+
+    /* Botão de ação */
+    .cta-button {
+      display: inline-block;
+      background: #c2185b;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      margin-top: 25px;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #ad1457;
+    }
+
+    /* Grid duplo */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* Depoimentos */
+    .testimonial {
+      background: #fce4ec;
+      border-left: 5px solid #c2185b;
+      padding: 18px 22px;
+      border-radius: 6px;
+      font-style: italic;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    /* FAQ */
+    .faq {
+      margin-top: 50px;
+    }
+    .faq-item {
+      border-bottom: 1px solid #f1c1d6;
+      padding: 15px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .faq-item:hover {
+      background: #f8c9dc;
+    }
+    .faq-item h4 {
+      color: #9c1f56;
+      font-weight: 700;
+      font-size: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-item h4 span {
+      font-size: 28px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active h4 span {
+      transform: rotate(45deg);
+    }
+    .faq-item p {
+      margin-top: 10px;
+      color: #555;
+      font-size: 16px;
+      line-height: 1.4;
+      display: none;
+    }
+    .faq-item.active p {
+      display: block;
+    }
+
+    /* Promoções */
+    .promotions {
+      background: #f8bbd0;
+      padding: 25px 30px;
+      border-radius: 12px;
+      margin: 50px 0;
+      text-align: center;
+      color: #6a1b9a;
+      font-weight: 700;
+      font-size: 22px;
+      box-shadow: 0 4px 12px rgba(194,0,104,0.2);
+    }
+    .promotions span {
+      color: #c2185b;
+      font-size: 28px;
+    }
+
+    /* Galeria Antes e Depois */
+    .gallery {
+      margin-top: 50px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+    }
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      background: #fff;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #eee;
+      height: 140px;
+      object-fit: cover;
+    }
+    .gallery-caption {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: #6a1b9a;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Formulário de contato */
+    form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    form input, form textarea {
+      padding: 12px 14px;
+      font-size: 16px;
+      border: 1.5px solid #c2185b;
+      border-radius: 8px;
+      resize: vertical;
+      font-family: inherit;
+    }
+    form button {
+      background: #c2185b;
+      color: white;
+      font-weight: 700;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form button:hover {
+      background: #ad1457;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: #f8c9dc;
+      color: #6a1b9a;
+      margin-top: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Botão WhatsApp flutuante */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      z-index: 10;
+      transition: background 0.3s ease;
+      text-decoration: none;
+    }
+    .whatsapp-button:hover {
+      background: #128c4a;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .side-image {
+        display: none;
+      }
+      .container {
+        margin: 20px 15px 80px;
+        padding: 20px;
+      }
+      header h1 {
+        font-size: 28px;
+      }
+      header p {
+        font-size: 16px;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Laterais decorativas -->
+  <div class="side-image side-left"></div>
+  <div class="side-image side-right"></div>
+
+  <header>
+    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=250&q=80" alt="Dra. Vitória Quadro - Cirurgiã-Dentista" />
+    <h1>Dra. Vitória Quadro</h1>
+    <p>Cirurgiã-Dentista - Implantes e Prótese</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Antes e Depois</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <main class="container">
+
+    <section id="sobre">
+      <h2>Sobre a Dra. Vitória</h2>
+      <p>
+        A Dra. Vitória Quadro atua na área de implantodontia e prótese dentária em Pelotas, RS. Com atendimento personalizado e técnicas modernas, oferece tratamentos que transformam sorrisos e aumentam a autoestima.
+      </p>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <h2>Galeria Antes e Depois</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1556228724-4a72d22ae89f?auto=format&fit=crop&w=400&q=80" alt="Paciente 1 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 1: Reabilitação com implantes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=400&q=80" alt="Paciente 2 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 2: Prótese fixa sobre implantes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=400&q=80" alt="Paciente 3 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 3: Sorriso restaurado com lentes de contato dentais</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Paciente 4 - Antes e Depois" />
+          <div class="gallery-caption">Paciente 4: Reabilitação completa</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="promocoes" class="promotions">
+      <p>
+        Aproveite nossos <span>pacotes promocionais</span> exclusivos para implantes e próteses. Consulte condições especiais e parcelamento no cartão!
+      </p>
+    </section>
+
+    <section id="faq" class="faq">
+      <h2>Perguntas Frequentes (FAQ)</h2>
+
+      <div class="faq-item">
+        <h4>Quais formas de pagamento vocês aceitam? <span>+</span></h4>
+        <p>Aceitamos cartão de crédito com parcelamento, Pix e dinheiro para sua maior comodidade.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Qual o tempo médio para um implante dentário? <span>+</span></h4>
+        <p>O tempo médio varia entre 3 a 6 meses, dependendo do caso clínico e do processo de osseointegração.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>O procedimento é doloroso? <span>+</span></h4>
+        <p>O implante é realizado com anestesia local, o que garante conforto durante o procedimento. Eventuais dores pós-operatórias são controladas com medicação prescrita.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Posso usar prótese imediata? <span>+</span></h4>
+        <p>Em alguns casos, é possível instalar prótese imediata após o implante, mas depende da avaliação do seu caso específico.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Quanto tempo dura um implante dentário? <span>+</span></h4>
+        <p>Com os cuidados adequados, um implante pode durar por muitos anos, até mesmo a vida toda.</p>
+      </div>
+
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form action="https://formsubmit.co/seu-email@exemplo.com" method="POST" target="_blank">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Dra. Vitória Quadro - Todos os direitos reservados.
+  </footer>
+
+  <a
+    href="https://wa.me/5553999999999"
+    target="_blank"
+    class="whatsapp-button"
+    aria-label="Contato via WhatsApp"
+  >
+    &#x2706;
+  </a>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
