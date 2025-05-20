@@ -170,11 +170,14 @@
       text-align: center;
       padding-bottom: 10px;
     }
-    .gallery img {
-  width: 2cm;
-  height: 3cm;
-  object-fit: cover; /* para a imagem preencher a área sem distorcer */
+    .gallery-item img {
+  width: 100%;
+  height: auto;   /* ajusta a altura proporcionalmente */
+  object-fit: contain;  /* mostra a imagem toda, pode deixar espaço vazio */
   display: block;
+  max-height: 180px;  /* opcional: limita a altura máxima */
+  margin: 0 auto;
+  background-color: #fff; /* opcional, para preencher espaços em branco */
 }
 
     .gallery-caption {
