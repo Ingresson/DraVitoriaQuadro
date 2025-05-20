@@ -60,13 +60,15 @@
 
     /* Imagem principal */
     #imagem-principal img {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-height: 450px;
-      object-fit: cover;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 450px; /* opcional, pode limitar a altura */
+  object-fit: contain; /* garante que a imagem toda apareça sem corte */
+  background-color: #fff0f5; /* mesma cor do fundo para evitar espaços vazios estranhos */
+  margin: 0 auto;
+}
+
 
     header h1 {
       font-size: 36px;
