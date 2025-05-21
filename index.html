@@ -15,23 +15,11 @@
       box-sizing: border-box;
     }
    body {
-  background-image: 
-    url('fundo-decorativo.png'), 
-    url('fundo-decorativo.png'), 
-    url('fundo-decorativo.png'),
-    url('fundo-decorativo.png'), 
-    url('fundo-decorativo.png'), 
-    url('fundo-decorativo.png');
-  background-repeat: repeat-y, repeat-y, repeat-y, repeat-y, repeat-y, repeat-y;
-  background-position: 
-    left 0px center, 
-    left 160px center, 
-    left 320px center, 
-    right 0px center, 
-    right 160px center, 
-    right 320px center;
-  background-size: 150px auto;
-  background-attachment: fixed;
+  background-image: url('fundo-decorativo.png'), url('fundo-decorativo.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right top;
+  background-size: 750px 100%, 750px 100%; /* 5 imagens empilhadas horizontalmente por lado */
+  background-attachment: fixed, fixed;
   background-color: #fff0f5;
   font-family: 'Poppins', sans-serif;
   color: #333;
@@ -40,6 +28,7 @@
   overflow-x: hidden;
   z-index: 0;
 }
+
 
 
 
