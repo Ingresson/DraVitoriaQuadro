@@ -16,16 +16,14 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background-image: url('fundo-decorativo.png');
-      background-repeat: repeat-y;
-      background-position: center;
-      background-size: cover;
+      background: #fff0f5;
       color: #333;
       font-size: 18px;
       line-height: 1.7;
-      overflow-x: hidden;
+      overflow-x: hidden; /* previne scroll horizontal */
     }
 
+    /* Header e Navegação */
     header {
       background: #d36fa4;
       color: white;
@@ -60,15 +58,17 @@
       text-decoration: underline;
     }
 
+    /* Imagem principal */
     #imagem-principal img {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-height: 450px;
-      object-fit: contain;
-      background-color: #fff0f5;
-      margin: 0 auto;
-    }
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 450px; /* opcional, pode limitar a altura */
+  object-fit: contain; /* garante que a imagem toda apareça sem corte */
+  background-color: #fff0f5; /* mesma cor do fundo para evitar espaços vazios estranhos */
+  margin: 0 auto;
+}
+
 
     header h1 {
       font-size: 36px;
@@ -81,6 +81,7 @@
       margin-bottom: 20px;
     }
 
+    /* Container principal */
     .container {
       max-width: 1200px;
       margin: 50px auto;
@@ -108,6 +109,7 @@
       margin-bottom: 20px;
     }
 
+    /* Botão CTA */
     .cta-button {
       display: inline-block;
       background: #c2185b;
@@ -125,6 +127,7 @@
       background: #ad1457;
     }
 
+    /* Grid 2 colunas para depoimentos e mapa */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -132,6 +135,7 @@
       margin-top: 40px;
     }
 
+    /* Depoimentos */
     .testimonial {
       background: #fce4ec;
       border-left: 5px solid #c2185b;
@@ -141,6 +145,7 @@
       margin-bottom: 20px;
     }
 
+    /* Mapa */
     iframe {
       width: 100%;
       height: 320px;
@@ -148,16 +153,15 @@
       border-radius: 10px;
     }
 
+    /* Galeria Antes e Depois */
     #galeria {
       margin-top: 50px;
     }
-
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       gap: 20px;
     }
-
     .gallery-item {
       border-radius: 10px;
       overflow: hidden;
@@ -166,16 +170,15 @@
       text-align: center;
       padding-bottom: 10px;
     }
-
     .gallery-item img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      max-height: 360px;
-      display: block;
-      margin: 0 auto;
-      background-color: #fff;
-    }
+  width: 150%;
+  height: auto;   /* ajusta a altura proporcionalmente */
+  object-fit: contain;  /* mostra a imagem toda, pode deixar espaço vazio */
+  display: block;
+  max-height: 360px;  /* opcional: limita a altura máxima */
+  margin: 0 auto;
+  background-color: #fff; /* opcional, para preencher espaços em branco */
+}
 
     .gallery-caption {
       padding: 20px 30px;
@@ -183,6 +186,7 @@
       color: #6a1b9a;
     }
 
+    /* FAQ */
     #faq {
       margin-top: 50px;
     }
@@ -227,6 +231,7 @@
       display: block;
     }
 
+    /* Formulário de contato */
     form {
       max-width: 600px;
       margin: 40px auto 0;
@@ -264,6 +269,7 @@
       background: #ad1457;
     }
 
+    /* Botão WhatsApp fixo */
     #whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -291,6 +297,7 @@
       height: 30px;
     }
 
+    /* Imagens laterais decorativas para ocupar espaços vazios */
     .side-image-left, .side-image-right {
       position: fixed;
       top: 100px;
@@ -301,15 +308,14 @@
       opacity: 0.15;
       user-select: none;
     }
-
     .side-image-left {
       left: 0;
     }
-
     .side-image-right {
       right: 0;
     }
 
+    /* Responsividade */
     @media (max-width: 991px) {
       .grid-2 {
         grid-template-columns: 1fr;
@@ -335,3 +341,149 @@
     }
   </style>
 </head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#quem-somos">Quem Somos</a></li>
+        <li><a href="#tratamentos">Tratamentos</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div id="imagem-principal">
+      <img src="dra-vitoria-quadro.jpg" alt="Foto da Dra. Vitória Quadro" />
+    </div>
+    <h1>Transforme seu sorriso com a Dra. Vitória Quadro</h1>
+    <p>Cirurgiã-Dentista | Implantodontista | Protesista</p>
+  </header>
+
+  <main class="container">
+    <section id="quem-somos">
+      <h2>Quem Somos</h2>
+      <p>A Dra. Vitória Quadro é uma cirurgiã-dentista graduada pela Universidade Federal de Pelotas (UFPel), com especializações em Prótese Dentária e Implantodontia. Com uma trajetória pautada pelo comprometimento, ética e constante busca pela excelência, atua também na área de clínica geral, oferecendo um atendimento humanizado e tecnicamente qualificado.
+
+Possui ampla experiência no diagnóstico e tratamento de diversas condições bucais, aliando conhecimento atualizado à sensibilidade no cuidado com cada paciente. Sua atuação é marcada pela dedicação, responsabilidade e capacidade de adaptação a diferentes contextos, sempre com o objetivo de proporcionar saúde, bem-estar e qualidade de vida por meio da odontologia.</p>
+      <p><strong>Endereço:</strong> Rua Barão de Santa Tecla, 656 – Pelotas, RS</p>
+      <p><strong>Telefone:</strong> <a href="tel:+5553991023827">(53) 99102-3827</a></p>
+      <p><strong>Email:</strong> <a href="mailto:vitoria.quadro@hotmail.com">vitoria.quadro@hotmail.com</a></p>
+    </section>
+
+    <section id="tratamentos">
+      <h2>Tratamentos</h2>
+      <ul>
+        <li>🦷 Implantes Dentários</li>
+        <li>🦷 Prótese Dentária</li>
+        <li>🦷 Restaurações</li>
+        <li>🦷 Extrações</li>
+        <li>🦷 Limpeza e Profilaxia</li>
+        <li>🦷 Clareamento Dental</li>
+        <li>🦷 Facetas de Porcelana</li>
+      </ul>
+      <a class="cta-button" href="https://wa.me/5553991023827" target="_blank">Agende sua consulta pelo WhatsApp</a>
+    </section>
+
+    <section id="depoimentos" class="grid-2">
+      <div>
+        <h2>Depoimentos</h2>
+        <div class="testimonial">“Profissional incrível! Atendimento impecável e resultado acima da expectativa.” – Juliana M.</div>
+        <div class="testimonial">“Me senti muito segura com a Dra. Vitória. Cuidadosa e muito competente.” – Roberto S.</div>
+      </div>
+      <div>
+        <h2>Localização</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.636063137465!2d-52.344092224520186!3d-31.76407047405713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9511af1a394a6ff1%3A0x4768f57934868333!2sR.%20Bar%C3%A3o%20de%20Santa%20Tecla%2C%20656%20-%20Centro%2C%20Pelotas%20-%20RS%2C%2096015-630!5e0!3m2!1spt-BR!2sbr!4v1716143683586!5m2!1spt-BR!2sbr"
+          allowfullscreen
+          loading="lazy"
+          title="Mapa da localização da clínica Dra. Vitória"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2>Galeria Antes e Depois</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="antes-depois1.jpg" alt="Antes e depois" />
+          <div class="gallery-caption">Antes e depois</div>
+        </div>
+        <div class="gallery-item">
+          <img src="antes-depois2.jpg" alt="Antes e depois" />
+          <div class="gallery-caption">Antes e depois</div>
+        </div>
+        <div class="gallery-item">
+          <img src="antes2.jpg" alt="Caso Antes 2" />
+          <div class="gallery-caption">Antes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="depois2.jpg" alt="Caso Depois 2" />
+          <div class="gallery-caption">Depois</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ - Perguntas Frequentes</h2>
+
+      <div class="faq-item">
+        <div class="faq-question">Qual o tempo de recuperação após o implante dentário?</div>
+        <div class="faq-answer">O tempo médio de recuperação varia de 1 a 2 semanas para a cicatrização inicial, mas o processo completo pode levar alguns meses para a integração total do implante.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Quais cuidados devo ter após a prótese dentária?</div>
+        <div class="faq-answer">Manter a higiene oral diária, evitar alimentos muito duros e realizar consultas regulares para manutenção são essenciais para a durabilidade da prótese.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">O tratamento é doloroso?</div>
+        <div class="faq-answer">Todos os procedimentos são realizados com anestesia local para minimizar o desconforto. A maioria dos pacientes relata apenas uma leve sensibilidade após o procedimento.</div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form action="https://formsubmit.co/vitoria.quadro@hotmail.com" method="POST" target="_blank">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu email" required />
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Imagens laterais decorativas -->
+  <img src="decoracao-left.png" alt="Decoração lateral esquerda" class="side-image-left" />
+  <img src="decoracao-right.png" alt="Decoração lateral direita" class="side-image-right" />
+
+  <!-- Botão WhatsApp fixo -->
+  <a href="https://wa.me/5553991023827" target="_blank" id="whatsapp-button" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" >
+      <path d="M16.5 10.5a3 3 0 01-3 3h-.5a1.5 1.5 0 00-1.5 1.5v.5a3 3 0 01-3 3h-.5a6 6 0 01-6-6v-6a6 6 0 016-6h6a6 6 0 016 6v.5z"></path>
+      <path d="M17.5 17.5l-3-3m0 0l-3-3m3 3l3 3m-3-3l-3-3"></path>
+    </svg>
+  </a>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const isShown = answer.classList.contains('show');
+
+        // Fecha todas as outras respostas abertas
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('show'));
+        document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+
+        // Se estava fechado, abre
+        if (!isShown) {
+          answer.classList.add('show');
+          question.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
