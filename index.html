@@ -8,7 +8,34 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+   
+
   <style>
+
+    /* Regras gerais para todos os tamanhos */
+    body {
+      background-color: white;
+      font-size: 16px;
+      color: black;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Media queries no final para telas menores que 600px */
+    @media (max-width: 600px) {
+      body {
+        background-color: lightgray;
+        font-size: 14px;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+    }
+    
     * {
       margin: 0;
       padding: 0;
@@ -182,7 +209,7 @@
       padding-bottom: 10px;
     }
     .gallery-item img {
-  width: 150%;
+  width: 100%;
   height: auto;   /* ajusta a altura proporcionalmente */
   object-fit: contain;  /* mostra a imagem toda, pode deixar espaço vazio */
   display: block;
@@ -545,7 +572,7 @@ Possui ampla experiência no diagnóstico e tratamento de diversas condições b
       });
     });
   </script>
-  </script>
+ 
 
   <!-- Formulário AJAX com Spinner -->
   <script>
